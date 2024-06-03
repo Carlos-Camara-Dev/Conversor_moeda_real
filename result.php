@@ -15,7 +15,9 @@ if (isset($_POST['coin'])) {
 
     $exchange_rate = $dados["value"][0]["cotacaoCompra"];
 
-    echo "O $coin esté custando " . numfmt_format_currency($padrao, $exchange_rate, "USD");
+    echo "O $coin esté custando " . numfmt_format_currency($padrao, $exchange_rate, $coin);
     $real = $value / $exchange_rate;
-    echo ". O que vale " . numfmt_format_currency($padrao, $real, "BRL");
+    echo ", o que vale " . numfmt_format_currency($padrao, $real, "BRL");
+} else {
+    echo "Esperando o formulário...";
 }

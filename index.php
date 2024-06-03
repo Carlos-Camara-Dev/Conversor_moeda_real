@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="overall_style.css">
 </head>
 
+
 <body>
     <main class="main">
         <section>
-            <form action="requeri.php" method="post" id="form_conversor">
-                <h2>Convertor de Moedas - Real</h2>
+            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post" id="form_conversor">
+                <h2>Convertor de Moedas</h2>
                 <label for="coin">
                     Moeda
                 </label><br>
@@ -26,6 +27,11 @@
                 <br>
                 <input id="buttom" type="submit" value="converter">
             </form>
+        </section>
+        <section class="result">
+            <?php
+            require_once("result.php");
+            ?>
         </section>
     </main>
 </body>
